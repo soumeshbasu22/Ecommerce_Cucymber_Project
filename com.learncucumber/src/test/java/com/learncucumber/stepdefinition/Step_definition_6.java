@@ -10,6 +10,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.learncucumber.baseclass.BaseClass;
+import com.learncucumber.baseclass.BrowserFactory;
 import com.learncucumber.pageobjects.PageObjects_HomePage;
 import com.learncucumber.utility.ExcelDataProvider;
 import com.learncucumber.utility.Helper;
@@ -18,35 +20,40 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.messages.Messages.StepDefinition;
 
-public class Step_definition_6 {
+public class Step_definition_6 extends BaseClass  {
 	
 	ExcelDataProvider edp;
 	Helper help;
 	Step_definition std;
 	WebDriver driver;
+	
 	PageObjects_HomePage poh;
-	public Step_definition_6() throws Throwable{
-		std=new Step_definition();
-		this.driver=std.i_open_browser_and_login();
-	}
+	BaseClass bc;
+	
 	
 	@Given("I am logged in to flipkart")
 	public void i_am_logged_in_to_flipkart() throws Throwable {
-	    
+		//driver=super.browser();
+	    std=new Step_definition();
+	    //std.i_open_browser_and_login();
+		//driver=BrowserFactory.browser(driver);
+	    driver=super.setUp();
+		poh=new PageObjects_HomePage(driver);
 		edp=new ExcelDataProvider();
 		int rownum2=edp.sh.getLastRowNum()-edp.sh.getFirstRowNum();
 		for(int i=1;i<=rownum2;i++) {
 			String username=edp.username(i);
 			String password=edp.password(i);
-			std.i_have_correct_username_and_password(username, password);
-			std.i_should_be_able_to_login_successfully();
+			poh.login(username, password);
+			poh.loginclick();
 		}
 	}
 	@Then("I will be able to view and click on all the categories of product")
 	public void i_will_be_able_to_view_and_click_on_all_the_categories_of_product() throws Throwable {
 		Thread.sleep(4000);
-		driver.navigate().refresh();
+		
 	   poh=new PageObjects_HomePage(driver);
+	   driver.navigate().refresh();
 	   List<WebElement>categories=driver.findElements(poh.category);
 	   ArrayList<String>cat=new ArrayList<>();
 	   cat.add("Mobile");

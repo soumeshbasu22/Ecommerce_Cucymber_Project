@@ -3,6 +3,9 @@ package com.learncucumber.stepdefinition;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.learncucumber.baseclass.BrowserFactory;
+import com.learncucumber.pageobjects.PageObjects_HomePage;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,16 +14,17 @@ public class Step_definition_3 {
 	Step_definition std;
 	Step_definition2 std2;
 	WebDriver driver;
-	
+	PageObjects_HomePage poh;
 	public Step_definition_3() throws Throwable{
-		std=new Step_definition();
-		this.driver=std.i_open_browser_and_login();
+		
+		this.driver=BrowserFactory.browser(driver);
 	}
 	@Given("I try to login with a new number")
 	public void i_try_to_login_with_a_new_number() throws Throwable {
 		System.out.println("pass");
-		std.i_have_correct_username_and_password("9339534464", "kjgdd");
-	    std.i_should_be_able_to_login_successfully();
+		poh=new PageObjects_HomePage(driver);
+		poh.login("9339534464", "kjgdd");
+	    poh.loginclick();
 	}
 	@When("The number should display as not registered")
 	public void the_number_should_display_as_not_registered() throws Throwable {

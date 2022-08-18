@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import com.learncucumber.baseclass.BrowserFactory;
 import com.learncucumber.pageobjects.PageObjects_HomePage;
 import com.learncucumber.utility.ExcelDataProvider;
 import com.learncucumber.utility.Helper;
@@ -30,21 +31,22 @@ public class Step_definition_5 {
 	Helper help;
 	
 	public Step_definition_5() throws Throwable{
-		ph=new PageObjects_HomePage(driver);
-		std=new Step_definition();
-		this.driver=std.i_open_browser_and_login();
+		
+		this.driver=BrowserFactory.browser(driver);
 	}
 	
 	@Given("I am logged in to the application")
 	public void i_am_logged_in_to_the_application() throws Throwable {
 		edp=new ExcelDataProvider();
 		int rownum=edp.sh.getLastRowNum()-edp.sh.getFirstRowNum();
+		ph=new PageObjects_HomePage(driver);
+		
 		for(int i=1;i<=rownum;i++) {
 			
 			String uname=edp.username(i);
 			String pwd=edp.password(i);
-		    std.i_have_correct_username_and_password(uname, pwd);
-		    std.i_should_be_able_to_login_successfully();
+		    ph.login(uname, pwd);
+		    ph.loginclick();
 		}edp.wb.close();
 	}
 	@When("I hover on my account a set of account trelated options open up")

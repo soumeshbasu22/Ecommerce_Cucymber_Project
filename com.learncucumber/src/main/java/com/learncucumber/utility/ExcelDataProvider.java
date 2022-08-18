@@ -11,7 +11,7 @@ public class ExcelDataProvider {
 	public XSSFWorkbook wb;
 	public ExcelDataProvider() throws Exception {
 		
-		String filepath="C:\\Users\\soumesh\\eclipse-workspace\\com.learncucumber\\TestData\\UserLoginInfo.xlsx";
+		String filepath="C:\\Users\\soumesh\\git\\Ecommerce_Cucymber_Project\\com.learncucumber\\TestData\\UserLoginInfo.xlsx";
 		FileInputStream fis=new FileInputStream(filepath);
 		wb=new XSSFWorkbook(fis);
 		sh=wb.getSheet("Sheet1");

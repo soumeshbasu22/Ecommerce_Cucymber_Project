@@ -10,6 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.learncucumber.baseclass.BrowserFactory;
+import com.learncucumber.pageobjects.PageObjects_HomePage;
 import com.learncucumber.utility.ExcelDataProvider;
 
 import io.cucumber.java.en.Given;
@@ -19,19 +21,22 @@ public class Step_definition_4 {
 	Step_definition std;
 	ExcelDataProvider edp;
 	WebDriver driver;
+	PageObjects_HomePage poh;
 	public Step_definition_4() throws Throwable {
-		std=new Step_definition();
-		this.driver=std.i_open_browser_and_login();
+		
+		this.driver=BrowserFactory.browser(driver);
 	}
 	@Given("I get logged in successfully with username and password {string},{string}")
 	public void i_get_logged_in_successfully_with_username_and_password(String uname,String pwd) throws Throwable {
 	   edp=new ExcelDataProvider();
+	   poh=new PageObjects_HomePage(driver);
 	   int rownum=edp.sh.getLastRowNum()-edp.sh.getFirstRowNum();
 	   for(int i=1;i<=rownum;i++) {
+		   
 		   uname=edp.username(i);
 		   pwd=edp.password(i);
-		   std.i_have_correct_username_and_password(uname, pwd);
-		   std.i_should_be_able_to_login_successfully();
+		   poh.login(uname, pwd);
+		   poh.loginclick();
 		   
 	   }edp.wb.close();
 	}
@@ -39,8 +44,10 @@ public class Step_definition_4 {
 	public void ishould_be_able_to_search_for_products() throws InterruptedException {
 	    // Write code here that turns the phrase above into concrete actions
 		//System.out.println("pass");
+		Thread.sleep(4000);
+		driver.navigate().refresh();
 		driver.findElement(By.xpath("//*[@name='q']")).sendKeys("watches");
-		//Thread.sleep(18000);
+		Thread.sleep(18000);
 		driver.findElement(By.xpath("//button[@type='submit']")).submit();
 		System.out.println("pass");
 		Thread.sleep(18000);
