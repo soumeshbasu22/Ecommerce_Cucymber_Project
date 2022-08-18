@@ -35,11 +35,11 @@ public class Step_definition2 {
 	@When("^I get an error$")
 	public void i_get_an_error() {
 	    
-	    //if(driver.findElement(By.xpath("//span[contains(text(),'incorrect')]")).isDisplayed()) {
+	    if(driver.findElement(By.xpath("//span[contains(text(),'incorrect')]")).isDisplayed()) {
 	    	System.out.println("Error in credentials");
 	    	//bo=true;
 	    	
-	    //}
+	    }
 	    //else {
 		//	bo=false;
 		//}

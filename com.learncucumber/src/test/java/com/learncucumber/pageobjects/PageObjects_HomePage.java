@@ -48,7 +48,7 @@ public class PageObjects_HomePage {
 			catch(Exception e){
 				System.out.println("in catch block");
 				help=new Helper();
-				help.newcell(5, 2, "F");
+				help.newcell(19, 3, "F");
 				
 				
 			}
@@ -56,5 +56,22 @@ public class PageObjects_HomePage {
 			
 			
 		}
+	}
+	
+	public boolean landingpage(String username,String myacc ) throws Exception {
+		driver.navigate().refresh();
+		Thread.sleep(2000);
+		boolean bo;
+	    try{
+	    	driver.findElement(By.xpath("//*[text()="+"'"+username+"'"+"]")).isDisplayed(); 
+	    	System.out.println("Login was successful");
+	    	bo=true;
+	    }
+	    catch(Exception e) {
+	    	driver.findElement(By.xpath("//*[text()="+"'"+myacc+"'"+"]") ).isDisplayed();
+	    	System.out.println("Login was successful for member with no sign up information");
+	    	bo=true;
+	    }
+	   return bo;
 	}
 	}

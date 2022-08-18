@@ -38,14 +38,23 @@ public class Step_definition_6 extends BaseClass  {
 	    //std.i_open_browser_and_login();
 		//driver=BrowserFactory.browser(driver);
 	    driver=super.setUp();
+	    help=new Helper();
 		poh=new PageObjects_HomePage(driver);
 		edp=new ExcelDataProvider();
 		int rownum2=edp.sh.getLastRowNum()-edp.sh.getFirstRowNum();
 		for(int i=1;i<=rownum2;i++) {
 			String username=edp.username(i);
 			String password=edp.password(i);
+			String user=edp.sh.getRow(i).getCell(2).getStringCellValue();
+			String defaultval=edp.sh.getRow(i).getCell(3).getStringCellValue();
 			poh.login(username, password);
 			poh.loginclick();
+			if(poh.landingpage(user, defaultval)) {
+				help.newcell(18, 3, "P");
+			}
+			else {
+				help.newcell(18, 3, "F");
+			}
 		}
 	}
 	@Then("I will be able to view and click on all the categories of product")
