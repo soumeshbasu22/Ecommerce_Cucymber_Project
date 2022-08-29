@@ -3,6 +3,9 @@ package com.learncucumber.utility;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -13,7 +16,7 @@ public class Helper {
 	
 	public XSSFWorkbook wb1;
 	public XSSFSheet sh1;
-	public String filepath1="C:\\Users\\soumesh\\git\\Ecommerce_Cucymber_Project\\com.learncucumber\\target\\Report_Excel.xlsx";
+	public String filepath1="C:\\Users\\soumesh\\git\\Ecommerce_Cucymber_Project\\com.learncucumber\\Reports\\Report_Excel.xlsx";
 	
 	public Helper() throws Exception {
 		
@@ -28,6 +31,12 @@ public class Helper {
 		currCell.setCellValue(msg);
 		FileOutputStream fo=new FileOutputStream(filepath1);
 		wb1.write(fo);
+	}
+	
+	public String getcurrentdate() {
+		DateFormat customFormat=new SimpleDateFormat("MM_dd_yyyy_HH_mm_ss");
+		Date currentDate=new Date();
+		return customFormat.format(currentDate);
 	}
 	
 }

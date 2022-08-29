@@ -62,6 +62,9 @@ public class Step_definition_4 {
 		if(driver.findElement(By.xpath("//*[text()='Watches'][@class='_2whKao']")).isDisplayed()) {
 			help.newcell(tc_no, 3, "P");
 		}
+		else {
+			help.newcell(tc_no, 3, "F");
+		}
 		}
 	@Then("I should be able to sort the products")
 	public void i_should_be_able_to_sort_the_products() throws Exception {
@@ -90,12 +93,12 @@ public class Step_definition_4 {
 		}
 		System.out.println(count+1+" Products are sorted");
 	}
-	//@AfterMethod
+	/*@AfterMethod
 	public void response(ITestResult result) throws Exception {
 		help=new Helper();
 		if(result.getStatus()==ITestResult.SUCCESS) {
 			help.newcell(tc_no, 3, "P");
 		}
-	}
+	}*/
 
 }

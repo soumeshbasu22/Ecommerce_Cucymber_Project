@@ -9,6 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ExcelDataProvider {
 	public XSSFSheet sh;
 	public XSSFWorkbook wb;
+	//public XSSFSheet sh1;
 	public ExcelDataProvider() throws Exception {
 		
 		String filepath="C:\\Users\\soumesh\\git\\Ecommerce_Cucymber_Project\\com.learncucumber\\TestData\\UserLoginInfo.xlsx";
@@ -23,5 +24,6 @@ public class ExcelDataProvider {
 	public String password(int i) {
 		return sh.getRow(i).getCell(1).getStringCellValue();
 	}
+	
 
 }

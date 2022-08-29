@@ -27,7 +27,7 @@ public class Step_definition extends BaseClass {
 
 	@When("I have correct username {string} and password {string}")
 	public void i_have_correct_username_and_password(String username,String pwd) throws Throwable {
-		driver=super.setUp();
+		driver=super.setUp();//Super will be used when we run from testrunner class
 		poh=new PageObjects_HomePage(driver);
 	    poh.login(username, pwd);
 	    

@@ -21,7 +21,7 @@ Feature: Login functionality of flipkart
    		Given I try to login with a new number
    		When The number should display as not registered
    		Then I should be able to sign up to flipkart with "538856","Raju1009@"
-   	
+   	@ignore
    	Scenario: Newly registered user can login and search for products
    		Given I get logged in successfully with username and password "<username>","<password>"
    		Then Ishould be able to search for products
