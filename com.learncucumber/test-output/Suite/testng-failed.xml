@@ -3,14 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.learncucumber.stepdefinition.Step_definition_6">
+      <class name="com.learncucumber.stepdefinition.Step_definition_8">
         <methods>
-          <include name="i_am_logged_in_to_flipkart"/>
+          <include name="i_open_flipkart"/>
+          <include name="i_search_a_product"/>
+          <include name="i_should_be_able_to_fetch_brand_and_price"/>
           <include name="reporting"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- com.learncucumber.stepdefinition.Step_definition_6 -->
+      </class> <!-- com.learncucumber.stepdefinition.Step_definition_8 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

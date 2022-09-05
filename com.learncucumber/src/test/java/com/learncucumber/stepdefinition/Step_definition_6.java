@@ -96,6 +96,9 @@ public class Step_definition_6 extends BaseClass  {
 	   if(count==8) {
 		   poh.click();
 	   }
+	   if(poh.click()==2) {
+		   test.info("All the elements not clickable");
+	   }
 		}
 
 

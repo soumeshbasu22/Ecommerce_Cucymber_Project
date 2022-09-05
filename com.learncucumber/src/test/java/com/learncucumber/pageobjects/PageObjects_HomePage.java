@@ -1,7 +1,11 @@
 package com.learncucumber.pageobjects;
 
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
+import org.apache.http.HttpConnection;
 import org.junit.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -9,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import com.aventstack.extentreports.Status;
 import com.learncucumber.baseclass.BaseClass;
 import com.learncucumber.utility.ExcelDataProvider;
 import com.learncucumber.utility.ExcelDataProvider_2;
@@ -16,6 +21,7 @@ import com.learncucumber.utility.Helper;
 
 public class PageObjects_HomePage {
 	public WebDriver driver;
+	
 	public By myaccount=By.xpath("//*[text()='My Account']");
 	public By myprofile=By.xpath("//*[text()='My Profile']");
 	public By myacclist=By.xpath("//*[@class='_3vhnxf']");
@@ -23,10 +29,11 @@ public class PageObjects_HomePage {
 	public static By uname=By.xpath("//input[@autocomplete='off'][@class='_2IX_2- VJZDxU']");
 	public static By pwd=By.xpath("//input[@type='password']");
 	By loginbutton=By.xpath("//button[span='Login']");
-	By searchbar=By.xpath("//*[@name='q']");
-	By searchbutton=By.xpath("//*[@class='L0Z3Pu']");
+	public static By searchbar=By.xpath("//*[@name='q']");
+	public static By searchbutton=By.xpath("//*[@class='L0Z3Pu']");
 	public By add_to_cart=By.xpath("//*[@class='_2KpZ6l _2U9uOA _3v1-ww']");
 	public By place_order_button=By.xpath("//*[text()='Place Order']");
+	public int flag;
 	public List<WebElement> product(String prod_name) {
 		return driver.findElements(By.xpath("//*[contains(@href,'"+prod_name.toLowerCase()+"')]"));
 	}
@@ -48,25 +55,28 @@ public class PageObjects_HomePage {
 		driver.findElement(loginbutton).click();
 	}
 	
-	public void click() throws Exception {
+	public int click() throws Exception {
+		int flag=0;
 		List<WebElement>categoryclick=driver.findElements(category);
 		for(int i=0;i<=categoryclick.size()-1;i++) {
 			try {
 			categoryclick.get(i).click();
 			Thread.sleep(5000);
 			driver.navigate().back();
+			flag=1;
 			}
 			catch(Exception e){
 				System.out.println("in catch block");
 				help=new Helper();
 				help.newcell(19, 3, "F");
-				
+				flag=2;
 				
 			}
 			
 			
 			
 		}
+		return flag;
 	}
 	
 	public boolean landingpage(String username,String myacc ) throws Exception {
@@ -126,5 +136,28 @@ public class PageObjects_HomePage {
 	public void order() {
 		driver.findElement(add_to_cart).click();
 		driver.findElement(place_order_button).click();
+	}
+	
+	public int verifylink(String linkurl) throws Exception {
+		int count=0;
+		try {
+		URL url=new URL(linkurl);
+		HttpURLConnection http=(HttpURLConnection)url.openConnection();
+		http.setConnectTimeout(2000);
+		http.connect();
+		
+		if(http.getResponseCode()==200) {
+			System.out.println("Not broken link");
+			count+=1;
+			System.out.println(count);
+			
+		}
+		
+		}
+		catch(Exception e) {
+			
+		}
+		System.out.println(count);
+		return count;
 	}
 	}

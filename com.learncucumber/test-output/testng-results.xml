@@ -1,106 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="125552" started-at="2022-08-25T13:12:27 IST" finished-at="2022-08-25T13:14:33 IST">
+  <suite name="Default suite" duration-ms="33801" started-at="2022-09-05T13:47:15 IST" finished-at="2022-09-05T13:47:49 IST">
     <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.learncucumber.testrunner.TestRunner@51c8530f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
     </groups>
-    <test name="Test" duration-ms="125552" started-at="2022-08-25T13:12:27 IST" finished-at="2022-08-25T13:14:33 IST">
-      <class name="com.learncucumber.stepdefinition.Step_definition_7">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.learncucumber.stepdefinition.Step_definition_7@6eceb130]" name="setUp" is-config="true" duration-ms="12590" started-at="2022-08-25T13:13:22 IST" finished-at="2022-08-25T13:13:34 IST">
+    <test name="Default test" duration-ms="33801" started-at="2022-09-05T13:47:15 IST" finished-at="2022-09-05T13:47:49 IST">
+      <class name="com.learncucumber.testrunner.TestRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.learncucumber.testrunner.TestRunner@51c8530f]" name="setUpClass" is-config="true" duration-ms="1696" started-at="2022-09-05T13:47:15 IST" finished-at="2022-09-05T13:47:17 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="i_am_in_my_home_page_and_i_searched_a_product()[pri:1, instance:com.learncucumber.stepdefinition.Step_definition_7@6eceb130]" name="i_am_in_my_home_page_and_i_searched_a_product" duration-ms="608" started-at="2022-08-25T13:13:34 IST" finished-at="2022-08-25T13:13:35 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- i_am_in_my_home_page_and_i_searched_a_product -->
-        <test-method status="PASS" signature="reporting(org.testng.ITestResult)[pri:0, instance:com.learncucumber.stepdefinition.Step_definition_7@6eceb130]" name="reporting" is-config="true" duration-ms="141" started-at="2022-08-25T13:13:35 IST" finished-at="2022-08-25T13:13:35 IST">
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.learncucumber.testrunner.TestRunner@51c8530f]" name="runScenario" duration-ms="31832" started-at="2022-09-05T13:47:17 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-09-05T13:47:49 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=i_am_in_my_home_page_and_i_searched_a_product status=SUCCESS method=Step_definition_7.i_am_in_my_home_page_and_i_searched_a_product()[pri:1, instance:com.learncucumber.stepdefinition.Step_definition_7@6eceb130] output={null}]]]>
+                <![CDATA["Verify if the user can fetch all the details redgarding brand and price"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Components of home page are working fine]"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- reporting -->
-        <test-method status="PASS" signature="i_click_on_the_desired_product()[pri:2, instance:com.learncucumber.stepdefinition.Step_definition_7@6eceb130]" name="i_click_on_the_desired_product" duration-ms="42843" started-at="2022-08-25T13:13:35 IST" finished-at="2022-08-25T13:14:18 IST">
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.learncucumber.testrunner.TestRunner@51c8530f]" name="tearDownClass" is-config="true" duration-ms="143" started-at="2022-09-05T13:47:49 IST" finished-at="2022-09-05T13:47:49 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- i_click_on_the_desired_product -->
-        <test-method status="PASS" signature="reporting(org.testng.ITestResult)[pri:0, instance:com.learncucumber.stepdefinition.Step_definition_7@6eceb130]" name="reporting" is-config="true" duration-ms="72" started-at="2022-08-25T13:14:18 IST" finished-at="2022-08-25T13:14:18 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=i_click_on_the_desired_product status=SUCCESS method=Step_definition_7.i_click_on_the_desired_product()[pri:2, instance:com.learncucumber.stepdefinition.Step_definition_7@6eceb130] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reporting -->
-        <test-method status="PASS" signature="i_can_click_on_add_to_cart_button()[pri:3, instance:com.learncucumber.stepdefinition.Step_definition_7@6eceb130]" name="i_can_click_on_add_to_cart_button" duration-ms="13601" started-at="2022-08-25T13:14:18 IST" finished-at="2022-08-25T13:14:31 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- i_can_click_on_add_to_cart_button -->
-        <test-method status="PASS" signature="reporting(org.testng.ITestResult)[pri:0, instance:com.learncucumber.stepdefinition.Step_definition_7@6eceb130]" name="reporting" is-config="true" duration-ms="95" started-at="2022-08-25T13:14:31 IST" finished-at="2022-08-25T13:14:32 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=i_can_click_on_add_to_cart_button status=SUCCESS method=Step_definition_7.i_can_click_on_add_to_cart_button()[pri:3, instance:com.learncucumber.stepdefinition.Step_definition_7@6eceb130] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reporting -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.learncucumber.stepdefinition.Step_definition_7@6eceb130]" name="tearDown" is-config="true" duration-ms="1201" started-at="2022-08-25T13:14:32 IST" finished-at="2022-08-25T13:14:33 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.learncucumber.stepdefinition.Step_definition_7 -->
-      <class name="com.learncucumber.stepdefinition.Step_definition_6">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.learncucumber.stepdefinition.Step_definition_6@706a04ae]" name="setUp" is-config="true" duration-ms="23166" started-at="2022-08-25T13:12:27 IST" finished-at="2022-08-25T13:12:50 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="i_am_logged_in_to_flipkart()[pri:-2, instance:com.learncucumber.stepdefinition.Step_definition_6@706a04ae]" name="i_am_logged_in_to_flipkart" duration-ms="11914" started-at="2022-08-25T13:12:50 IST" finished-at="2022-08-25T13:13:02 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- i_am_logged_in_to_flipkart -->
-        <test-method status="PASS" signature="reporting(org.testng.ITestResult)[pri:0, instance:com.learncucumber.stepdefinition.Step_definition_6@706a04ae]" name="reporting" is-config="true" duration-ms="746" started-at="2022-08-25T13:13:02 IST" finished-at="2022-08-25T13:13:03 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=i_am_logged_in_to_flipkart status=SUCCESS method=Step_definition_6.i_am_logged_in_to_flipkart()[pri:-2, instance:com.learncucumber.stepdefinition.Step_definition_6@706a04ae] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reporting -->
-        <test-method status="PASS" signature="i_will_be_able_to_view_and_click_on_all_the_categories_of_product()[pri:-1, instance:com.learncucumber.stepdefinition.Step_definition_6@706a04ae]" name="i_will_be_able_to_view_and_click_on_all_the_categories_of_product" duration-ms="17064" started-at="2022-08-25T13:13:03 IST" finished-at="2022-08-25T13:13:20 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- i_will_be_able_to_view_and_click_on_all_the_categories_of_product -->
-        <test-method status="PASS" signature="reporting(org.testng.ITestResult)[pri:0, instance:com.learncucumber.stepdefinition.Step_definition_6@706a04ae]" name="reporting" is-config="true" duration-ms="109" started-at="2022-08-25T13:13:20 IST" finished-at="2022-08-25T13:13:20 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=i_will_be_able_to_view_and_click_on_all_the_categories_of_product status=SUCCESS method=Step_definition_6.i_will_be_able_to_view_and_click_on_all_the_categories_of_product()[pri:-1, instance:com.learncucumber.stepdefinition.Step_definition_6@706a04ae] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reporting -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.learncucumber.stepdefinition.Step_definition_6@706a04ae]" name="tearDown" is-config="true" duration-ms="1238" started-at="2022-08-25T13:13:20 IST" finished-at="2022-08-25T13:13:22 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.learncucumber.stepdefinition.Step_definition_6 -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.learncucumber.testrunner.TestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -7,6 +7,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
 import com.learncucumber.baseclass.BaseClass;
 import com.learncucumber.pageobjects.PageObjects_HomePage;
 import com.learncucumber.utility.ExcelDataProvider;
@@ -22,6 +23,7 @@ public class Step_definition_7 extends BaseClass {
 	ExcelDataProvider edp;
 	PageObjects_HomePage poh;
 	Helper help;
+	
 	@Test(priority=1)
 	@Given("I am in my home page and I searched a product")
 	public void i_am_in_my_home_page_and_i_searched_a_product() throws Throwable {
@@ -36,6 +38,7 @@ public class Step_definition_7 extends BaseClass {
 	    	poh.login(uname, pwd);
 	    	poh.loginclick();
 	    }
+	    
 	}
 	@Test(priority=2)
 	@When("I click on the desired product")
@@ -50,17 +53,19 @@ public class Step_definition_7 extends BaseClass {
 			if(no_of_windows>1) {
 				help.newcell(20, 3, "P");
 				help.newcell(21, 3, "P");
+				poh.flag=1;
 			}
 			else {
 			help.newcell(20, 3, "F");
 			help.newcell(21, 3, "F");
+			
 		}
 		
 	}
 	@Test(priority=3)
 	@Then("I can click on add to cart button")
 	public void i_can_click_on_add_to_cart_button() throws Throwable {
-		test=report.createTest("I am in home page");
+		test=report.createTest("I can add the products in the cart");
 		poh=new PageObjects_HomePage(driver);
 		help=new Helper();
 		Set<String>windows=driver.getWindowHandles();
@@ -74,9 +79,11 @@ public class Step_definition_7 extends BaseClass {
 				try {
 					driver.findElement(By.xpath("//*[text()='Price details']")).isDisplayed();
 					help.newcell(22, 3, "P");
+					
 				}
 				catch(Exception e) {
 					help.newcell(22, 3, "F");
+					test.info("Price details not displayed");
 				}
 			}
 		}

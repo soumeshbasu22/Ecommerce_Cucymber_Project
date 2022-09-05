@@ -24,6 +24,7 @@ Feature: Login functionality of flipkart
    	@ignore
    	Scenario: Newly registered user can login and search for products
    		Given I get logged in successfully with username and password "<username>","<password>"
+   		Then I can verify all the links in home page if anything is broken
    		Then Ishould be able to search for products
     	And I should be able to sort the products
    

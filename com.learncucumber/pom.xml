@@ -90,7 +90,7 @@
         <configuration>
           
           <includes>
-          	<exclude>**/*Runner.java</exclude>
+          	<exclude>**/*Step*.java</exclude>
           </includes>
          </configuration>
       </plugin>
