@@ -96,14 +96,14 @@ public class Step_definition_8 extends BaseClass{
 				break;
 			}
 		}driver.findElement(poh.searchbutton).submit();
-		
-		if(driver.findElement(By.xpath("//*[@class='_10Ermr']")).isDisplayed()) {
+		try {
+			driver.findElement(By.xpath("//*[@class='_10Ermr']")).isDisplayed();
 			
 			flag=1;
 			test.log(Status.PASS, "Test Case is passed");
 			help.newcell(24, 3, "P");
 		}
-		else {
+		catch(Exception e) {
 			flag=2;
 			test.log(Status.FAIL, "Test Case is failed");
 			help.newcell(24, 3, "F");

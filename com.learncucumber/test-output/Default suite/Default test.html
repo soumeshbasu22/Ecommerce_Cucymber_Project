@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Sep 05 13:47:15 IST 2022</td>
+<td>Started on:</td><td>Wed Nov 02 13:38:23 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>33 seconds (33801 ms)</td>
+<tr><td>Total time:</td><td>122 seconds (122380 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
@@ -76,9 +76,38 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.learncucumber.testrunner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.learncucumber.testrunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify if the user can fetch all the details redgarding brand and price", "Optional[Components of home page are working fine]"</td>
-<td></td>
-<td>31</td>
-<td>com.learncucumber.testrunner.TestRunner@51c8530f</td></tr>
+<td><div><pre>java.io.FileNotFoundException: C:\Users\soumesh\git\Ecommerce_Cucymber_Project\com.learncucumber\Reports\Report_Excel.xlsx (The process cannot access the file because it is being used by another process)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:213)
+	at java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:101)
+	at com.learncucumber.utility.Helper.newcell(Helper.java:32)
+	at com.learncucumber.stepdefinition.Step_definition_8.i_open_flipkart(Step_definition_8.java:79)
+	at ✽.I open flipkart(file:///C:/Users/soumesh/git/Ecommerce_Cucymber_Project/com.learncucumber/Features/e_commerce_homepage.feature:18)
+</pre></div><a href='#' onClick='toggleBox("stack-trace982073480", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace982073480'><pre>java.io.FileNotFoundException: C:\Users\soumesh\git\Ecommerce_Cucymber_Project\com.learncucumber\Reports\Report_Excel.xlsx (The process cannot access the file because it is being used by another process)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:213)
+	at java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:101)
+	at com.learncucumber.utility.Helper.newcell(Helper.java:32)
+	at com.learncucumber.stepdefinition.Step_definition_8.i_open_flipkart(Step_definition_8.java:79)
+	at ✽.I open flipkart(file:///C:/Users/soumesh/git/Ecommerce_Cucymber_Project/com.learncucumber/Features/e_commerce_homepage.feature:18)
+</pre></div></td>
+<td>54</td>
+<td>com.learncucumber.testrunner.TestRunner@67b467e9</td></tr>
+<tr>
+<td title='com.learncucumber.testrunner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.learncucumber.testrunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate if 'Explore Plus' option is visible in home page", "Optional['Explore Plus' functionality]"</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.learncucumber.stepdefinition.Step_definition_6.i_am_logged_in_to_flipkart(Step_definition_6.java:39)
+	at ✽.I am logged in to flipkart(file:///C:/Users/soumesh/git/Ecommerce_Cucymber_Project/com.learncucumber/Features/e_commerce_flipKartPlus_option.feature:3)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1840217399", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1840217399'><pre>java.lang.NullPointerException
+	at com.learncucumber.stepdefinition.Step_definition_6.i_am_logged_in_to_flipkart(Step_definition_6.java:39)
+	at ✽.I am logged in to flipkart(file:///C:/Users/soumesh/git/Ecommerce_Cucymber_Project/com.learncucumber/Features/e_commerce_flipKartPlus_option.feature:3)
+</pre></div></td>
+<td>65</td>
+<td>com.learncucumber.testrunner.TestRunner@67b467e9</td></tr>
 </table><p>
 </body>
 </html>
