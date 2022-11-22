@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-import com.learncucumber.baseclass.BaseClass;
 import com.learncucumber.baseclass.BrowserFactory;
 import com.learncucumber.pageobjects.PageObjects_HomePage;
 import com.learncucumber.utility.ExcelDataProvider;
@@ -26,22 +25,23 @@ public class Step_definition_6 extends BaseClass  {
 	ExcelDataProvider edp;
 	Helper help;
 	Step_definition std;
-	//WebDriver driver;
+	Step_definition_8 std8;
+	BaseClass_withCucumber bcc;
 	
 	PageObjects_HomePage poh;
 	BaseClass bc;
 	
-	@Test(priority=-2)
+	@Test(priority=-2,groups="Scenario6")
 	@Given("I am logged in to flipkart")
 	public void i_am_logged_in_to_flipkart() throws Throwable {
 		
-	    std=new Step_definition();
-	    test=report.createTest("I am logged into Flipkart");
+	    bcc=new BaseClass_withCucumber();
+	    //test=report.createTest("I am logged into Flipkart");
 	    //std.i_open_browser_and_login();
 		//driver=BrowserFactory.browser(driver);
 	    //driver=super.setUp();
 	    help=new Helper();
-		poh=new PageObjects_HomePage(driver);
+		poh=new PageObjects_HomePage(bcc.setUp());
 		edp=new ExcelDataProvider();
 		int rownum2=edp.sh.getLastRowNum()-edp.sh.getFirstRowNum();
 		for(int i=1;i<=rownum2;i++) {
@@ -60,7 +60,7 @@ public class Step_definition_6 extends BaseClass  {
 			}
 		}
 	}
-	@Test(priority=-1)
+	@Test(priority=-1,groups="Scenario6")
 	@Then("I will be able to view and click on all the categories of product")
 	public void i_will_be_able_to_view_and_click_on_all_the_categories_of_product() throws Throwable {
 		Thread.sleep(4000);

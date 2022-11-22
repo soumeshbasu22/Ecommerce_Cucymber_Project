@@ -1,4 +1,4 @@
-package com.learncucumber.baseclass;
+package com.learncucumber.stepdefinition;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,8 +15,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.learncucumber.baseclass.BrowserFactory;
 import com.learncucumber.pageobjects.PageObjects_HomePage;
-import com.learncucumber.stepdefinition.Step_definition;
 import com.learncucumber.utility.Helper;
 
 import io.cucumber.java.AfterStep;
@@ -27,7 +27,7 @@ public class BaseClass {
 	public ExtentReports report;
 	Helper help;
 	PageObjects_HomePage poh;
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public  WebDriver setUp() throws Throwable {
 		
 		help=new Helper();
@@ -37,14 +37,14 @@ public class BaseClass {
 		report.attachReporter(html);
 		return driver=BrowserFactory.browser(driver);
 	}
-	@org.testng.annotations.AfterClass
+	@org.testng.annotations.AfterClass(alwaysRun=true)
 	public void tearDown() throws Throwable {
 		
 		driver.quit();
 		
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	public void reporting(ITestResult result) throws Throwable {
 		System.out.println("inside report");
 		poh=new PageObjects_HomePage(driver);

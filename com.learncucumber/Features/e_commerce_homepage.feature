@@ -8,12 +8,12 @@ Feature: Components of home page are working fine
 	Scenario: Verify the categories of items displayed with image
 		Given I am logged in to flipkart
 		Then I will be able to view and click on all the categories of product
-	@ignore
+	
 	Scenario: Verify if the user can Complete end to end ordering process
 		Given I am in my home page and I searched a product
 		When I click on the desired product
 		Then I can click on add to cart button
-		
+	@ignore	
 	Scenario: Verify if the user can fetch all the details redgarding brand and price
 		Given I open flipkart
 		When I search a product

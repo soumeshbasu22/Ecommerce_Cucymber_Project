@@ -2,6 +2,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test thread-count="5" name="Test">
+  <groups>
+  <run>
+  <include name="Scenario4"/>
+  <include name="Scenario7"/>
+  <include name="Scenario8"/>
+  <include name="Scenario9"/>
+  </run>
+  </groups>
     <packages>
       
       <package name="com.learncucumber.stepdefinition"/>

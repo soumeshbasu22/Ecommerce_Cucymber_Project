@@ -14,7 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.aventstack.extentreports.Status;
-import com.learncucumber.baseclass.BaseClass;
+import com.learncucumber.stepdefinition.BaseClass;
 import com.learncucumber.utility.ExcelDataProvider;
 import com.learncucumber.utility.ExcelDataProvider_2;
 import com.learncucumber.utility.Helper;
@@ -42,7 +42,6 @@ public class PageObjects_HomePage {
 	BaseClass bc;
 	ExcelDataProvider_2 edp2;
 	public PageObjects_HomePage(WebDriver driver) throws Throwable {
-		//bc=new BaseClass();
 		this.driver=driver;
 	}
 	

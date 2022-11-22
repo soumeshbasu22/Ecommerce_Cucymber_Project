@@ -20,8 +20,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.learncucumber.baseclass.BaseClass;
 import com.learncucumber.baseclass.BrowserFactory;
+
 import com.learncucumber.pageobjects.PageObjects_HomePage;
 import com.learncucumber.utility.ExcelDataProvider;
 import com.learncucumber.utility.ExcelDataProvider_2;
@@ -42,25 +42,12 @@ public class Step_definition_8 extends BaseClass{
 	PageObjects_HomePage poh;
 	ExcelDataProvider edp;
 	ExcelDataProvider_2 edp2;
+	
 	/*ExtentTest test;
 	ExtentReports report;*/
 	int flag;
 	
-	//we can run it as TestNG tests through testng.xml file as well.For that we can just extend the base class and ignore @beforestep/@afterstep
-	
-	@Before
-	public void before_test() throws Throwable {
-		
-		Helper help=new Helper();
-		System.out.println("before each test");
-		driver=BrowserFactory.browser(driver);
-		String filepath="C:\\Users\\soumesh\\git\\Ecommerce_Cucymber_Project\\com.learncucumber\\Reports\\Extent-html-Report\\extentreport"+help.getcurrentdate()+".html";
-		ExtentHtmlReporter html=new ExtentHtmlReporter(filepath);
-		report=new ExtentReports();
-		report.attachReporter(html);
-	}
-	
-	@Test(priority=4)
+	@Test(priority=4,groups="Scenario8")
 	@Given("I open flipkart")
 	public void i_open_flipkart() throws Throwable {
 		Helper help=new Helper();
@@ -79,11 +66,11 @@ public class Step_definition_8 extends BaseClass{
 	help.newcell(23, 3, "P");
 	}
 	
-	@Test(priority=5)
+	@Test(priority=5,groups="Scenario8")
 	@When("I search a product")
 	public void i_search_a_product() throws Exception{
 		
-		test=report.createTest("I can search the product");
+		//test=report.createTest("I can search the product");
 		driver.navigate().refresh();
 		edp2=new ExcelDataProvider_2();
 		int rownum=edp2.sh1.getLastRowNum()-edp2.sh1.getFirstRowNum();
@@ -110,7 +97,7 @@ public class Step_definition_8 extends BaseClass{
 		}
 	}
 	
-	@Test(priority=6)
+	@Test(priority=6,groups="Scenario8")
 	@Then("I should be able to fetch brand and price")
 	public void i_should_be_able_to_fetch_brand_and_price() throws Exception {
 		
@@ -143,28 +130,7 @@ public class Step_definition_8 extends BaseClass{
 			}
 		}help.wb1.close();
 	}
-	
-	@AfterStep
-	
-	public void after_step() throws Throwable {
-		
-		
-		System.out.println("after each step");
-		if(flag==1) {
-			test.log(Status.PASS, "Test case is passed");
-		}
-		else {
-			test.log(Status.FAIL, "Test case is failed");
-		}report.flush();
-		
-	}
-	
-	
-	@After
-	public void after() {
-		driver.quit();
-	}
-	}
+}
 	
 	
 

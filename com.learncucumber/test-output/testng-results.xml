@@ -2,19 +2,19 @@
 <testng-results skipped="0" failed="2" ignored="0" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="122380" started-at="2022-11-02T13:38:23 IST" finished-at="2022-11-02T13:40:25 IST">
+  <suite name="Default suite" duration-ms="177140" started-at="2022-11-22T12:46:14 IST" finished-at="2022-11-22T12:49:11 IST">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.learncucumber.testrunner.TestRunner@67b467e9]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.learncucumber.testrunner.TestRunner@727803de]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Default test" duration-ms="122380" started-at="2022-11-02T13:38:23 IST" finished-at="2022-11-02T13:40:25 IST">
+    <test name="Default test" duration-ms="177140" started-at="2022-11-22T12:46:14 IST" finished-at="2022-11-22T12:49:11 IST">
       <class name="com.learncucumber.testrunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.learncucumber.testrunner.TestRunner@67b467e9]" name="setUpClass" is-config="true" duration-ms="1758" started-at="2022-11-02T13:38:23 IST" finished-at="2022-11-02T13:38:24 IST">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.learncucumber.testrunner.TestRunner@727803de]" name="setUpClass" is-config="true" duration-ms="1144" started-at="2022-11-22T12:46:15 IST" finished-at="2022-11-22T12:46:16 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.learncucumber.testrunner.TestRunner@67b467e9]" name="runScenario" duration-ms="65837" started-at="2022-11-02T13:38:25 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-11-02T13:39:30 IST">
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.learncucumber.testrunner.TestRunner@727803de]" name="runScenario" duration-ms="49041" started-at="2022-11-22T12:46:16 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-11-22T12:47:05 IST">
           <params>
             <param index="0">
               <value>
@@ -23,26 +23,25 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional['Explore Plus' functionality]"]]>
+                <![CDATA["Optional[Explore Plus functionality]"]]>
               </value>
             </param>
           </params>
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
-at com.learncucumber.stepdefinition.Step_definition_6.i_am_logged_in_to_flipkart(Step_definition_6.java:39)
-at ✽.I am logged in to flipkart(file:///C:/Users/soumesh/git/Ecommerce_Cucymber_Project/com.learncucumber/Features/e_commerce_flipKartPlus_option.feature:3)
+at com.learncucumber.stepdefinition.BaseClass_withCucumber.tearDown(BaseClass_withCucumber.java:32)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.learncucumber.testrunner.TestRunner@67b467e9]" name="runScenario" duration-ms="54503" started-at="2022-11-02T13:39:30 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-11-02T13:40:25 IST">
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.learncucumber.testrunner.TestRunner@727803de]" name="runScenario" duration-ms="125531" started-at="2022-11-22T12:47:05 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-11-22T12:49:11 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Verify if the user can fetch all the details redgarding brand and price"]]>
+                <![CDATA["Verify if the user can Complete end to end ordering process"]]>
               </value>
             </param>
             <param index="1">
@@ -51,26 +50,17 @@ at ✽.I am logged in to flipkart(file:///C:/Users/soumesh/git/Ecommerce_Cucymbe
               </value>
             </param>
           </params>
-          <exception class="java.io.FileNotFoundException">
-            <message>
-              <![CDATA[C:\Users\soumesh\git\Ecommerce_Cucymber_Project\com.learncucumber\Reports\Report_Excel.xlsx (The process cannot access the file because it is being used by another process)]]>
-            </message>
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[java.io.FileNotFoundException: C:\Users\soumesh\git\Ecommerce_Cucymber_Project\com.learncucumber\Reports\Report_Excel.xlsx (The process cannot access the file because it is being used by another process)
-at java.io.FileOutputStream.open0(Native Method)
-at java.io.FileOutputStream.open(FileOutputStream.java:270)
-at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
-at java.io.FileOutputStream.<init>(FileOutputStream.java:101)
-at com.learncucumber.utility.Helper.newcell(Helper.java:32)
-at com.learncucumber.stepdefinition.Step_definition_8.i_open_flipkart(Step_definition_8.java:79)
-at ✽.I open flipkart(file:///C:/Users/soumesh/git/Ecommerce_Cucymber_Project/com.learncucumber/Features/e_commerce_homepage.feature:18)
+              <![CDATA[java.lang.NullPointerException
+at com.learncucumber.stepdefinition.BaseClass_withCucumber.tearDown(BaseClass_withCucumber.java:32)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.io.FileNotFoundException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.learncucumber.testrunner.TestRunner@67b467e9]" name="tearDownClass" is-config="true" duration-ms="139" started-at="2022-11-02T13:40:25 IST" finished-at="2022-11-02T13:40:25 IST">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.learncucumber.testrunner.TestRunner@727803de]" name="tearDownClass" is-config="true" duration-ms="93" started-at="2022-11-22T12:49:11 IST" finished-at="2022-11-22T12:49:11 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

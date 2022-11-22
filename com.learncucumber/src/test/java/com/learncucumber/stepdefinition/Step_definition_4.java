@@ -15,7 +15,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
-import com.learncucumber.baseclass.BaseClass;
 import com.learncucumber.baseclass.BrowserFactory;
 import com.learncucumber.pageobjects.PageObjects_HomePage;
 import com.learncucumber.utility.ExcelDataProvider;
@@ -32,7 +31,7 @@ public class Step_definition_4 extends BaseClass {
 	Helper help;
 	public int tc_no=0;
 	
-	@Test(priority=-6)
+	@Test(priority=-6,groups="Scenario4")
 	
 	@Given("I get logged in successfully with username and password {string},{string}")
 	public void i_get_logged_in_successfully_with_username_and_password() throws Throwable {
@@ -53,7 +52,7 @@ public class Step_definition_4 extends BaseClass {
 		   
 	   }edp.wb.close();
 	}
-	@Test(priority=-5)
+	@Test(priority=-5,groups="Scenario4")
 	@Then("I can verify all the links in home page if anything is broken")
 	public void i_can_verify_all_the_links_in_home_page_if_anything_is_broken() throws Exception  {
 	    // Write code here that turns the phrase above into concrete actions
@@ -85,7 +84,7 @@ public class Step_definition_4 extends BaseClass {
 	    }
 	}
 
-	@Test(priority = -4)
+	@Test(priority = -4,groups="Scenario4")
 	@Then("Ishould be able to search for products")
 	public void ishould_be_able_to_search_for_products() throws Exception {
 	    // Write code here that turns the phrase above into concrete actions
@@ -107,7 +106,7 @@ public class Step_definition_4 extends BaseClass {
 			help.newcell(tc_no, 3, "F");
 		}
 		}
-	@Test(priority = -3)
+	@Test(priority = -3,groups="Scenario4")
 	@Then("I should be able to sort the products")
 	public void i_should_be_able_to_sort_the_products() throws Exception {
 		tc_no=14;

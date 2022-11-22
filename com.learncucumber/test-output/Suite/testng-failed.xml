@@ -2,47 +2,23 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="5" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="Scenario4"/>
+        <include name="Scenario7"/>
+        <include name="Scenario8"/>
+        <include name="Scenario9"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.learncucumber.stepdefinition.Step_definition_7">
-        <methods>
-          <include name="i_can_click_on_add_to_cart_button"/>
-          <include name="i_click_on_the_desired_product"/>
-          <include name="i_am_in_my_home_page_and_i_searched_a_product"/>
-          <include name="reporting"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.learncucumber.stepdefinition.Step_definition_7 -->
       <class name="com.learncucumber.stepdefinition.Step_definition_8">
         <methods>
-          <include name="i_open_flipkart"/>
-          <include name="i_search_a_product"/>
-          <include name="i_should_be_able_to_fetch_brand_and_price"/>
           <include name="reporting"/>
           <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="i_should_be_able_to_fetch_brand_and_price"/>
         </methods>
       </class> <!-- com.learncucumber.stepdefinition.Step_definition_8 -->
-      <class name="com.learncucumber.stepdefinition.Step_definition_4">
-        <methods>
-          <include name="i_can_verify_all_the_links_in_home_page_if_anything_is_broken"/>
-          <include name="i_should_be_able_to_sort_the_products"/>
-          <include name="ishould_be_able_to_search_for_products"/>
-          <include name="i_get_logged_in_successfully_with_username_and_password"/>
-          <include name="reporting"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.learncucumber.stepdefinition.Step_definition_4 -->
-      <class name="com.learncucumber.stepdefinition.Step_definition_6">
-        <methods>
-          <include name="i_will_be_able_to_view_and_click_on_all_the_categories_of_product"/>
-          <include name="i_am_logged_in_to_flipkart"/>
-          <include name="reporting"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.learncucumber.stepdefinition.Step_definition_6 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

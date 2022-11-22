@@ -76,13 +76,18 @@
     <version>4.1.2</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-<dependency>
+<!--<dependency>
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
-    <version>3.0.0</version>
+    <version>3.1.2</version>
+</dependency>-->
+ <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports-testng-adapter -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports-testng-adapter</artifactId>
+    <version>1.2.2</version>
 </dependency>
 
- 
   </dependencies>
   
    <build>
